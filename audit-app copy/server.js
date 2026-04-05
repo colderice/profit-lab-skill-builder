@@ -119,7 +119,8 @@ app.post('/audit', async (req, res) => {
         twitter,
         linkedin,
         youtube,
-        tiktok
+        tiktok,
+        tab_name: 'Audit Leads'
       };
       
       axios.post(process.env.GOOGLE_SHEET_WEBHOOK_URL, sheetData)

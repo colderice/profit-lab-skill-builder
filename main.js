@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 
 // --- CONFIGURATION ---
 // Replace with your GoHighLevel or other webhook URL to capture leads
-const WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL_HERE';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby00dqcVomWfVeHmRi0IKvAJnLrCme_Aus6hEDSGXQIG0IuOMLa4JrNyqtS16uMVm6I3g/exec';
 
 // --- HUB NAVIGATION ---
 window.switchTool = (toolId) => {
@@ -136,10 +136,11 @@ async function submitLead(firstName, email) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            first_name: firstName,
+            firstName: firstName,
             email: email,
             skill_name: skillData.name,
-            source: 'Profit Lab Skill Builder'
+            source: 'Profit Lab Skill Builder',
+            tab_name: 'GPT-Convert tab'
         })
     });
 }
