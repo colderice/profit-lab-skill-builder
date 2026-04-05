@@ -79,7 +79,8 @@
                     <div id="step-indicator" class="step-indicator">
                         <div class="indicator-item active" data-step="1">1. Metadata</div>
                         <div class="indicator-item" data-step="2">2. Instructions</div>
-                        <div class="indicator-item" data-step="3">3. Result</div>
+                        <div class="indicator-item" data-step="3">3. Unlock</div>
+                        <div class="indicator-item" data-step="4">4. Result</div>
                     </div>
 
                     <div id="converter-content">
@@ -110,12 +111,30 @@
                             </div>
                             <div class="view-actions">
                                 <button class="text-button" onclick="prevStep(1)">← Back</button>
-                                <button class="cta-button primary glow" onclick="synthesizeSkill()">Synthesize Skill Package</button>
+                                <button class="cta-button primary" onclick="nextStep(3)">Continue to Synthesis →</button>
                             </div>
                         </div>
 
-                        <!-- Step 3 View -->
+                        <!-- Step 3 View (Unlock) -->
                         <div id="view-step-3" class="view">
+                            <h2>Unlock Your Skill</h2>
+                            <p class="view-desc">Where should we send your updates? Enter your details to synthesize your Claude Code Action Skill.</p>
+                            <div class="form-group">
+                                <label for="lead-name">First Name</label>
+                                <input type="text" id="lead-name" placeholder="Enter your first name...">
+                            </div>
+                            <div class="form-group">
+                                <label for="lead-email">Email Address</label>
+                                <input type="email" id="lead-email" placeholder="you@example.com">
+                            </div>
+                            <div class="view-actions">
+                                <button class="text-button" onclick="prevStep(2)">← Back</button>
+                                <button id="synthesize-btn" class="cta-button primary glow" onclick="synthesizeSkill()">Unlock & Synthesize</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 View -->
+                        <div id="view-step-4" class="view">
                             <div class="success-header">
                                 <div class="success-icon">✓</div>
                                 <h2>Synthesis Complete</h2>
