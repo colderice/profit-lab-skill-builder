@@ -4,6 +4,19 @@ import JSZip from 'jszip';
 // Replace with your GoHighLevel or other webhook URL to capture leads
 const WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL_HERE';
 
+// --- HUB NAVIGATION ---
+window.switchTool = (toolId) => {
+    // Update tabs
+    document.querySelectorAll('.tool-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.tool === toolId);
+    });
+
+    // Update tool containers
+    document.querySelectorAll('.tool-container').forEach(container => {
+        container.classList.toggle('active', container.id === `${toolId}-tool`);
+    });
+};
+
 // State Management
 let currentStep = 1;
 const skillData = {

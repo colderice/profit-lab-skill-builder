@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profit Lab Skill Builder | Synthesize Your Agent Skills</title>
+    <title>Profit Lab Hub | All-in-One AI Arsenal</title>
     <link rel="icon" type="image/jpg" href="/logo-dark.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
             <div class="nav-content">
                 <div class="logo-area">
                     <img src="/logo-dark.jpg" alt="AI Profit Lab" class="nav-logo">
-                    <span class="brand-name">Profit Lab <span class="accent-text">Skill Builder</span></span>
+                    <span class="brand-name">Profit Lab <span class="accent-text">Hub</span></span>
                 </div>
                 <div class="nav-links">
                     <a href="#how-it-works">How it Works</a>
@@ -31,12 +31,12 @@
             <div class="hero-glow"></div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="badge">Experimental Lab Tool</div>
-                    <h1>Your GPTs Deserve <br><span class="glow-text">Full Autonomy</span></h1>
-                    <p class="hero-sub">Transform your Custom GPT instructions into <strong>Claude Code Skills</strong>. Port your logic from ChatGPT to a multi-step agent workflow in 30 seconds.</p>
+                    <div class="badge">Profit Lab Elite Tools</div>
+                    <h1>Your All-in-One <br><span class="glow-text">AI Arsenal</span></h1>
+                    <p class="hero-sub">Synthesize native agent skills or audit brand presence with the ultimate lab tools for Profit Lab students. Scale your business with precision.</p>
                     <div class="hero-actions">
-                        <button class="cta-button large" onclick="scrollToConverter()">Start Synthesis</button>
-                        <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" class="text-link">What is Claude Code? →</a>
+                        <button class="cta-button large" onclick="scrollToConverter()">Launch Tools</button>
+                        <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" class="text-link">Claude Code Docs →</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -72,10 +72,20 @@
             </div>
         </section>
 
-        <!-- Converter Application -->
+        <!-- Multi-Tool Interface -->
         <section id="converter" class="converter-section">
             <div class="container">
-                <div class="converter-card glass-panel">
+                <div class="tool-tabs-container glass-panel">
+                    <button class="tool-tab active" data-tool="skill-builder" onclick="switchTool('skill-builder')">
+                        <span class="tab-icon">🧪</span> Skill Builder
+                    </button>
+                    <button class="tool-tab" data-tool="audit-app" onclick="switchTool('audit-app')">
+                        <span class="tab-icon">🔍</span> Profit Lab Audit App
+                    </button>
+                </div>
+
+                <div id="skill-builder-tool" class="tool-container active">
+                    <div class="converter-card glass-panel">
                     <div id="step-indicator" class="step-indicator">
                         <div class="indicator-item active" data-step="1">1. Metadata</div>
                         <div class="indicator-item" data-step="2">2. Instructions</div>
@@ -155,6 +165,18 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Audit App Tool Container -->
+                <div id="audit-app-tool" class="tool-container">
+                    <div class="audit-card glass-panel">
+                        <iframe 
+                            src="https://web-production-997f4.up.railway.app" 
+                            id="audit-iframe"
+                            class="audit-iframe"
+                            title="Profit Lab Audit App"
+                        ></iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -164,7 +186,7 @@
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <img src="/logo-dark.jpg" alt="Logo" class="footer-logo">
-                        <p>© 2026 AI Profit Lab. All rights reserved for Profit Lab students.</p>
+                        <p>© 2026 AI Profit Lab. All-in-One AI Arsenal for Profit Lab Students.</p>
                     </div>
                     <div class="footer-links">
                         <h4>Community & Resources</h4>
