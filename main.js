@@ -134,9 +134,10 @@ async function submitLead(firstName, email) {
     }
     await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors', // Avoid CORS preflight (OPTIONS request) which GAS doesn't support
+        headers: { 'Content-Type': 'text/plain' }, // Using text/plain is a "simple" header that further avoids preflight
         body: JSON.stringify({
-            firstName: firstName,
+            first_name: firstName,
             email: email,
             skill_name: skillData.name,
             source: 'Profit Lab Skill Builder',

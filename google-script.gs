@@ -9,7 +9,17 @@
 function doPost(e) {
   try {
     // 1. Get the data from the incoming request payload
-    var data = JSON.parse(e.postData.contents);
+    var data;
+    try {
+      data = JSON.parse(e.postData.contents);
+    } catch (parseError) {
+      // Fallback if the data is sent in e.parameter (e.g. from a form-urlencoded request)
+      data = e.parameter;
+      if (Object.keys(data).length === 0) {
+        throw new Error("Unable to parse request body: " + e.postData.contents);
+      }
+    }
+    
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     
     // 2. Determine which tab to use
